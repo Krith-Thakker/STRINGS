@@ -1,1 +1,35 @@
+#include<iostream>
+#include<vector>
+using namespace std;
 
+bool validCharacter(char c){
+  if((c>='a'&&c<='z') || (c>='A'&& c<='Z') || c>='0'&&c<='9'){
+    return true;
+  }
+  return false;
+}
+
+bool validPalindrome(string s){
+  vector<int> ans;
+  for(int i=0;i<s.length();i++){
+    if(validCharacter(s[i])==1){
+      ans.push_back(s[i]);
+    }
+  }
+  for(int i=0;i<ans.size();i++){
+    if(ans[i]>='A'&& ans[i]<='Z'){
+    ans[i]=tolower(ans[i]);
+    }
+  }
+  for(int i=0;i<ans.size()/2;i++){
+    if(ans[i]!=ans[ans.size()-i-1]){
+      return false;
+    }
+  }
+  return true ;
+}
+
+int main(){
+  string s = "m o4 m";
+  cout<<validPalindrome(s);
+}
