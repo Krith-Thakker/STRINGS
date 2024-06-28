@@ -1,1 +1,25 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void removeConsecutive(string s){
+  // vector<int> result;
+  string result ="";
+  int i=1;
+  result = result+s[0];
+  while(i<s.length()){
 
+    if(s[i]!=s[i-1]){
+      result = result+s[i];
+    }
+    i++;
+  }
+  // return result;
+  for(int i=0;i<result.length();i++){
+    cout<<result[i]<<' ';
+  }
+}
+
+int main(){
+string s ="aabb";
+  removeConsecutive(s);
+}
