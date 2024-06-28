@@ -1,1 +1,22 @@
+// print all duplicate in the string 
+#include<iostream>
+using namespace std;
+void printDuplicate(string s){
+  int arr[26]={0};
+  for(int i=0;i<s.length();i++){
+    int index = s[i]-'a';
+    arr[index]= arr[index]+1;
+  }
+  for(int i=0;i<26;i++){
+    if(arr[i]>=2){
+      int index =(i+'a');
+      char str1 = char(index);
+      cout<<str1<<' '<<"count"<<' '<<arr[i]<<endl;
+    }
+  }
+}
 
+int main(){
+  string s = "geeksforgeeks";
+  printDuplicate(s);
+}
